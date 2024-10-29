@@ -1,9 +1,9 @@
-#### Apresentação do Trabalho 
+# Apresentação do Trabalho 
 Esse trabalho é um desafio passado pelo Compass.UOL no Programa de Estágio Devsecops - Outubro 2025 que se dá à criação e automatização de um script em shell que verifique de 5min em 5min o funcionamento do Web Server Nginx no Ubuntu 20.04.
 
 
 
-### Nginx no Ubuntu pelo WSL 
+# Nginx no Ubuntu pelo WSL 
 
 ## Passo 1: Windows PowerShell 
 Vá na barra de pesquisa do gerenciador de tarefas e pesquise "Windows PowerShell", clique com o botão direito do mouser no item e execute como administrador.
