@@ -1,1 +1,1 @@
-# Script
+#### Nginx no Ubuntu pelo WSL 
