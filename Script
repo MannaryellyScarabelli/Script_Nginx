@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Variáveis
+DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
+SERVICO="Nginx"
+DIRETORIO="/caminho/projeto_script/logs"
+ONLINE="${projeto_script}/online.log"
+OFFLINE="${projeto_script}/offline.log"
+
+# Verifica o status do Nginx
+STATUS=$(systemctl is-active nginx)
+
+# Condição para verificar se o Nginx está online
+if [ "$STATUS" = "active" ]; then
+    echo "$DATA_E_HORA - $SERVICO - ONLINE - O serviço está ativo." >> $ONLINE
+else
+    echo "$DATA_E_HORA - $SERVICO - OFFLINE - O serviço não está ativo." >> $OFFLINE
+fi
