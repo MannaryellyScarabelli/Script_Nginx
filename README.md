@@ -127,6 +127,28 @@ ExecStart=/bin/bash /home/seu_usuario/nome_do_diretorio/verificar_nginx.sh
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
+Crei o arquivo de timer:
+
+```
+
+[Unit]
+Description=Timer para o script de verificar o Nginx
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+Unit=verificar_nginx.service
+
+[Install]
+WantedBy=timers.target
+
+````
+
+![image](https://github.com/user-attachments/assets/ab22ea5d-08b7-4b2a-afdc-cfca0add2491)
+
+Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
+
+
 Digite o seguinte comando para ativar e inicar o time:
 
 `sudo systemctl enable verificar_nginx.timer`
@@ -139,6 +161,23 @@ Checar status do timer:
 
 `systemctl list-timers `
 
+![image](https://github.com/user-attachments/assets/d2fb6c9c-2c9a-43be-b05e-4dc82a661a5e)
+
+
+
+
 Checar os logs:
 
  `journalctl -u checar_nginx.service `
+
+ ## Passo 6: Versionamento com Git
+ 
+ Irei demontrar passo a passo como versionar o projeto.
+
+ Inicialmente digite o camando:
+
+`gh auth login `
+
+Irá aparecer algumas opções de das versões para instalar, escolhar uma e digite exatamente o como aparece. Observe a imagem para entender melhor.
+
+![image](https://github.com/user-attachments/assets/63da3d00-58ec-4df2-a152-c846bb0197f1)
