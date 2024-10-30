@@ -2,7 +2,11 @@
 
 # Variáveis
 DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
+
+# Nome do serviço monitorado
 SERVICO="Nginx"
+
+# Diretório criado anteriormente
 DIRETORIO="/caminho/projeto_script/logs"
 ONLINE="${projeto_script}/online.log"
 OFFLINE="${projeto_script}/offline.log"
