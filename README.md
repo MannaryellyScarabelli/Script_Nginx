@@ -120,6 +120,18 @@ ExecStart=/bin/bash /home/seu_usuario/nome_do_diretorio/verificar_nginx.sh
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
+Digite o seguinte comando para ativar e inicar o time:
 
+`sudo systemctl enable verificar_nginx.timer`
 
+Iiniciar o timer:
 
+`sudo systemctl start checar_nginx.timer`
+
+Checar status do timer:
+
+`systemctl list-timers `
+
+Checar os logs:
+
+ `journalctl -u checar_nginx.service `
