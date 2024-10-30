@@ -15,12 +15,14 @@ Com o "Windows PowerShell" já aberto, para instalar o WSL digite:
 
 Agora segue para a instalação do Ubuntu, digite o camando:
 
-'wsl --install -d Ubuntu-22.04`
+`wsl --install -d Ubuntu-22.04`
 
 Após a finalização da instalação crie um nome de usuário e uma senha em que você usará em alguns momentos.
 Para continuar será necessário reniciar seu computador para finalizar a configurações internas do WSL. 
 Após iniciar use:
-'wsl -l -v'
+
+`wsl -l -v`
+
 para verificar se está em funcionamento.
 
 Vá à barra de pesquisa do gerenciador e procure "Ubuntu". Ao encontrar estará pronto para iniciar o próximo passo.
@@ -28,15 +30,15 @@ Vá à barra de pesquisa do gerenciador e procure "Ubuntu". Ao encontrar estará
 ## Passo 3: Servidor Nginx
 Primeiro atualize os pacotes do Ubunto com o comando:
 
-'sudo apt update'
+`sudo apt update`
 
 Agora, para instalar o Nginx utilize o comando:
 
-'sudo apt install nginx'
+`sudo apt install nginx`
 
 Feito isso, para verificar se está rodando corretamente digite:
 
-'sudo systemctl status nginx'
+`sudo systemctl status nginx`
 
 
 
@@ -48,18 +50,19 @@ Assim como na imagem, deve aparecer essa mensagem atestando o bom funcionamento 
 ## Passo 4: Criação do Script
 Primeira coisa a se fazer nesse passo é criar um deretório, no entanto use o camando:
 
-'mkdir nome_do_diretorio'
+`mkdir nome_do_diretorio`
 
 Navegue no diretório usando:
 
-'cd nome_do_diretorio'
+`cd nome_do_diretorio`
 
-Agora para iniciar o código, usará o edito 'nano'
-'nano verificar_nginx.sh'
+Agora para iniciar o código, usará o edito `nano`
+
+`nano verificar_nginx.sh`
 
 Adicione o sweguinte código:
 
-'#!/bin/bash
+`#!/bin/bash
 
 #Variáveis
 DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
@@ -76,11 +79,11 @@ if [ "$STATUS" = "active" ]; then
     echo "$DATA_E_HORA - $SERVICO - ONLINE - O serviço está ativo." >> $ONLINE
 else
     echo "$DATA_E_HORA - $SERVICO - OFFLINE - O serviço não está ativo." >> $OFFLINE
-fi'
+fi`
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
 Para permitir o funcionamento do script como rpograma digite:
 
-'chmod +x checar_nginx.sh'
+`chmod +x checar_nginx.sh`
 
