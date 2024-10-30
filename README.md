@@ -62,7 +62,8 @@ Agora para iniciar o código, usará o edito `nano`
 
 Adicione o sweguinte código:
 
-`#!/bin/bash
+```
+#!/bin/bash
 
 #Variáveis
 DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
@@ -80,6 +81,8 @@ if [ "$STATUS" = "active" ]; then
 else
     echo "$DATA_E_HORA - $SERVICO - OFFLINE - O serviço não está ativo." >> $OFFLINE
 fi`
+
+````
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
