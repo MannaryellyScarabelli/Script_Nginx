@@ -8,6 +8,8 @@ Esse trabalho é um desafio passado pelo Compass.UOL no Programa de Estágio Dev
 ## Passo 1: Windows PowerShell 
 Vá na barra de pesquisa do gerenciador de tarefas e pesquise "Windows PowerShell", clique com o botão direito do mouser no item e execute como administrador.
 
+
+
 ## Passo 2: Instalação do WSL no Windows 
 Com o "Windows PowerShell" já aberto, para instalar o WSL digite:
 
@@ -26,6 +28,8 @@ Após iniciar use:
 para verificar se está em funcionamento.
 
 Vá à barra de pesquisa do gerenciador e procure "Ubuntu". Ao encontrar estará pronto para iniciar o próximo passo.
+
+
 
 ## Passo 3: Servidor Nginx
 Primeiro atualize os pacotes do Ubunto com o comando:
@@ -46,6 +50,8 @@ Para obter confirmação se o nginx está funcionando normalmente acesse: http:/
 ![image](https://github.com/user-attachments/assets/23b0a1f5-f37f-4a37-90d1-c2ef08697b23)
 
 Assim como na imagem, deve aparecer essa mensagem atestando o bom funcionamento do nginx.
+
+
 
 ## Passo 4: Criação do Script
 Primeira coisa a se fazer nesse passo é criar um deretório, no entanto use o camando:
@@ -88,5 +94,32 @@ Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
 Para permitir o funcionamento do script como rpograma digite:
 
-`chmod +x checar_nginx.sh`
+`chmod +x verificar_nginx.sh`
+
+
+## Passo 5: Automatização do Script
+O script será automatizado utilizando a ferramenta:
+
+`Systemd Timers`
+
+Faça a criação de arquivo de serviço com:
+
+`sudo nano /etc/systemd/system/verificar_nginx.service`
+
+Agora é só adicionar essa parte:
+
+```
+[Unit]
+Description=Script para checar o status do Nginx
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/seu_usuario/nome_do_diretorio/verificar_nginx.sh
+
+````
+
+Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
+
+
+
 
