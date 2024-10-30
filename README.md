@@ -91,6 +91,9 @@ fi`
 
 ````
 
+![image](https://github.com/user-attachments/assets/2b916a43-7319-43a9-9b1f-0ea1e7f72b50)
+
+
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
 Para permitir o funcionamento do script como rpograma digite:
