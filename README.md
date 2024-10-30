@@ -44,6 +44,7 @@ Feito isso, para verificar se está rodando corretamente digite:
 
 `sudo systemctl status nginx`
 
+![image](https://github.com/user-attachments/assets/8dda4ff8-0f60-42e1-a6f2-a9913acba7b9)
 
 
 Para obter confirmação se o nginx está funcionando normalmente acesse: http://localhost/
