@@ -75,9 +75,9 @@ Adicione o sweguinte código:
 #Variáveis
 DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
 SERVICO="Nginx"
-DIRETORIO="/caminho/projeto_script/logs"
-ONLINE="${projeto_script}/online.log"
-OFFLINE="${projeto_script}/offline.log"
+DIRETORIO="/caminho/nome_do_diretorio/logs"
+ONLINE="${nome_do_diretorio}/online.log"
+OFFLINE="${nome_do_diretorio}/offline.log"
 
 #Verifica o status do Nginx
 STATUS=$(systemctl is-active nginx)
@@ -114,13 +114,16 @@ Agora é só adicionar essa parte:
 
 ```
 [Unit]
-Description=Script para checar o status do Nginx
+Description=Script para verificar o status do Nginx
 
 [Service]
 Type=simple
 ExecStart=/bin/bash /home/seu_usuario/nome_do_diretorio/verificar_nginx.sh
 
 ````
+
+![image](https://github.com/user-attachments/assets/c1020e83-b675-429d-94cb-b8abf092aaf5)
+
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
