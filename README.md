@@ -11,7 +11,7 @@ Vá na barra de pesquisa do gerenciador de tarefas e pesquise "Windows PowerShel
 ## Passo 2: Instalação do WSL no Windows 
 Com o "Windows PowerShell" já aberto, para instalar o WSL digite:
 
-'wsl --install'
+`wsl --install`
 
 Agora segue para a instalação do Ubuntu, digite o camando:
 
