@@ -114,7 +114,11 @@ Esse comando permitirá que defina o tempo de verificação da atividade do ngin
 
 Desça o cursor para a última linha e digite o seguinte comando que definirá o tempo de verificação:
 
-`*/5 * * * * /home/caminho/do/script.sh`
+```
+
+*/5 * * * * /home/caminho/do/script.sh
+
+````
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
