@@ -72,26 +72,27 @@ Adicione o sweguinte código:
 ```
 #!/bin/bash
 
-#Variáveis
+# Variáveis
 DATA_E_HORA=$(date '+%Y-%m-%d %H:%M:%S')
 SERVICO="Nginx"
-DIRETORIO="/caminho/nome_do_diretorio/logs"
-ONLINE="${nome_do_diretorio}/online.log"
-OFFLINE="${nome_do_diretorio}/offline.log"
+DIRETORIO="/caminho/diretorio/logs"
+ONLINE="${DIRETORIO}/online.log"
+OFFLINE="${DIRETORIO}/offline.log"
 
-#Verifica o status do Nginx
+# Verifica o status do Nginx
 STATUS=$(systemctl is-active nginx)
 
-#Condição para verificar se o Nginx está online
+# Condição para verificar se o Nginx está online
 if [ "$STATUS" = "active" ]; then
     echo "$DATA_E_HORA - $SERVICO - ONLINE - O serviço está ativo." >> $ONLINE
 else
     echo "$DATA_E_HORA - $SERVICO - OFFLINE - O serviço não está ativo." >> $OFFLINE
-fi`
+fi
 
 ````
 
-![image](https://github.com/user-attachments/assets/2b916a43-7319-43a9-9b1f-0ea1e7f72b50)
+![Imagem do WhatsApp de 2024-10-30 à(s) 23 32 15_dbc7cc4c](https://github.com/user-attachments/assets/3dfa1489-84bb-4743-8755-a2d090c475cb)
+
 
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
@@ -100,84 +101,26 @@ Para permitir o funcionamento do script como rpograma digite:
 
 `chmod +x verificar_nginx.sh`
 
-
 ## Passo 5: Automatização do Script
 O script será automatizado utilizando a ferramenta:
 
-`Systemd Timers`
+`crontab -e`
 
-Faça a criação de arquivo de serviço com:
+Esse comando permitirá que defina o tempo de verificação da atividade do nginx.
 
-`sudo nano /etc/systemd/system/verificar_nginx.service`
 
-Agora é só adicionar essa parte:
+![image](https://github.com/user-attachments/assets/4a709d18-b9bf-419f-8ade-8cb8ecdb25d1)
 
-```
-[Unit]
-Description=Script para verificar o status do Nginx
 
-[Service]
-Type=simple
-ExecStart=/bin/bash /home/seu_usuario/nome_do_diretorio/verificar_nginx.sh
+Desça o cursor para a última linha e digite o seguinte comando que definirá o tempo de verificação:
 
-````
-
-![image](https://github.com/user-attachments/assets/c1020e83-b675-429d-94cb-b8abf092aaf5)
-
+`*/5 * * * * /home/caminho/do/script.sh`
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
-Crei o arquivo de timer:
+Para verificar se está funcinando como o esperado, utilize o comando:
 
-```
+` cat online.log`
 
-[Unit]
-Description=Timer para o script de verificar o Nginx
+![image](https://github.com/user-attachments/assets/1748ae49-f7bf-4138-ba04-900c7653ea54)
 
-[Timer]
-OnBootSec=5min
-OnUnitActiveSec=5min
-Unit=verificar_nginx.service
-
-[Install]
-WantedBy=timers.target
-
-````
-
-![image](https://github.com/user-attachments/assets/ab22ea5d-08b7-4b2a-afdc-cfca0add2491)
-
-Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
-
-
-Digite o seguinte comando para ativar e inicar o time:
-
-`sudo systemctl enable verificar_nginx.timer`
-
-Iiniciar o timer:
-
-`sudo systemctl start checar_nginx.timer`
-
-Checar status do timer:
-
-`systemctl list-timers `
-
-![image](https://github.com/user-attachments/assets/d2fb6c9c-2c9a-43be-b05e-4dc82a661a5e)
-
-
-
-
-Checar os logs:
-
- `journalctl -u checar_nginx.service `
-
- ## Passo 6: Versionamento com Git
- 
- Irei demontrar passo a passo como versionar o projeto.
-
- Inicialmente digite o camando:
-
-`gh auth login `
-
-Irá aparecer algumas opções de das versões para instalar, escolhar uma e digite exatamente o como aparece. Observe a imagem para entender melhor.
-
-![image](https://github.com/user-attachments/assets/63da3d00-58ec-4df2-a152-c846bb0197f1)
