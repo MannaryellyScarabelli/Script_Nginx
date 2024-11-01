@@ -101,6 +101,17 @@ Para permitir o funcionamento do script como rpograma digite:
 
 `chmod +x verificar_nginx.sh`
 
+
+# DICA
+
+Para visualizar o caminho do diretório, use o comando:
+
+
+`pwd`
+
+![image](https://github.com/user-attachments/assets/d6842ad0-d40a-4418-9a41-43ebb7e0c791)
+
+
 ## Passo 5: Automatização do Script
 O script será automatizado utilizando a ferramenta:
 
