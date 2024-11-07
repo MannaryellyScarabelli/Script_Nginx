@@ -63,7 +63,7 @@ Navegue no diretório usando:
 
 `cd nome_do_diretorio`
 
-Agora para iniciar o código, usará o edito `nano`
+Agora para iniciar o código, usará o editor `nano`
 
 `nano verificar_nginx.sh`
 
