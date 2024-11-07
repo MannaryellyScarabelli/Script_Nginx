@@ -97,7 +97,7 @@ fi
 
 Digite CTRL + O , ENTER para salvar e CTRL + X para sair da edição.
 
-Para permitir o funcionamento do script como rpograma digite:
+Para permitir o funcionamento do script como programa digite:
 
 `chmod +x verificar_nginx.sh`
 
